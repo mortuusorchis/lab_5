@@ -21,22 +21,32 @@ int main() {
 	} */
 
 	// zadanie 2
-	/*int n;
+	int n;
 
 	cout << "Podaj ile liczb potrzebujesz: ";
 	cin >> n;
 	int* table = new int[n];
 
-	tab[0] = 0;
-	tab[1] = 1;
+	if (n < 0) {
+		cout << "Liczba elementow musi byc wieksza od 0." << endl;
+		return 0;
+	}
+	table[0] = 0;
+	if (n > 1) {
+		table[1] = 1;
+	}
+	
+	if (n >= 1) {
+		cout << table[1]
+	}
 
 	for (int i = 2; i < n; i = i++) {
-		table[i] = [i - 2] + [i - 1];
+		table[i] = (i - 2) + (i - 1);
 
 		cout << table[i] << endl;
 	}
 	return 0;
-} */
+} 
 
 
 // zadanie 3
@@ -57,7 +67,7 @@ int main() {
 
 
 // zadanie 4 
-int n;
+/*int n;
 const int tableSize = 10;
 int tab[tableSize];
 cout << "Podaj 10 elementow z przedziału [0, 10]. " << endl;
@@ -68,5 +78,5 @@ for (int i = 0; i < n; i++) {
 for (int i = n; i < 10; i++) {
 	 tab[i] = 0 ;
 }
-}
+}*/
 
