@@ -330,11 +330,11 @@ return 0;
 } */
 
 // zadanie 10
-
+/*
 	int macierz[8][8]{};
 
 	srand(time(NULL));
-	
+
 	cout << "Macierz: " << endl;
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
@@ -343,6 +343,10 @@ return 0;
 		}
 		cout << endl;
 	}
+
+	int sumaWszystkichWierszy = 0;
+	int sumaWszystkichKolumn = 0;
+
 	cout << "\n Suma elementow wierszy: \n";
 
 	for (int i = 0; i < 8; i++) {
@@ -351,9 +355,11 @@ return 0;
 		for (int j = 0; j < 8; j++) {
 			sumaWiersza = sumaWiersza + macierz[i][j];
 		}
-        cout << "Wiersz " << i + 1 << ": " << sumaWiersza << endl;
+		cout << "Wiersz " << i + 1 << ": " << sumaWiersza << endl;
+
+		sumaWszystkichWierszy = sumaWszystkichWierszy + sumaWiersza;
 	}
-	cout << "\n Suma elementow kolumn: \n"; 
+	cout << "\n Suma elementow kolumn: \n";
 
 	for (int j = 0; j < 8; j++) {
 		int sumaKolumn = 0;
@@ -362,16 +368,70 @@ return 0;
 			sumaKolumn = sumaKolumn + macierz[i][j];
 		}
 		cout << "Kolumna " << j + 1 << ": " << sumaKolumn << endl;
+
+		sumaWszystkichKolumn = sumaWszystkichKolumn + sumaKolumn;
 	}
 
 	int sumamacierzy = 0;
 
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
-			sumamacierzy = sumamacierzy + macierz[i][j];	
+			sumamacierzy = sumamacierzy + macierz[i][j];
 		}
 	}
-	cout << "\nSuma wszystkich elementow: " << endl;
+	cout << "\nSuma wszystkich elementow: ";
 	cout << sumamacierzy << endl;
-    
-}
+	cout << endl;
+
+	if (sumaWszystkichWierszy == sumaWszystkichKolumn && sumaWszystkichKolumn == sumamacierzy)
+		cout << "Wszystkie sumy sa zgodne." << endl;
+	else
+		cout << "Blad w obliczeniach." << endl;
+	return 0;
+} */
+
+// zadanie 11
+
+	int macierz[8][6]{};
+
+	srand(time(NULL));
+
+	cout << "Macierz: " << endl;
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 6; j++) {
+			macierz[i][j] = rand() % 100;
+			cout << macierz[i][j] << "\t";
+		}
+		cout << endl;
+	}
+
+	int max = macierz[0][0]={};
+	int wierszMax = 0;
+	int kolumnaMax = 0;
+
+	int min = macierz[0][0]={};
+    int wierszMin = 0;
+	int kolumnaMin = 0;
+
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 6; j++) {
+			if (macierz[i][j] < min) {
+				min = macierz[i][j];
+				wierszMin = i;
+				kolumnaMin = j;
+			}
+		}
+	}
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 6; j++) {
+			if (macierz[i][j] > max) {
+				max = macierz[i][j];
+				wierszMax = i;
+				kolumnaMax = j;
+			}
+		}
+	}
+	cout << "Maksymalna wartosc: " << max << " znajduje sie w [" << wierszMax << "][" << kolumnaMax << "]" << endl;
+	cout << "Minimalna wartosc: " << min << " znajduje sie w [" << wierszMin << "][" << kolumnaMin << "]" << endl;	
+	return 0;
+} 
