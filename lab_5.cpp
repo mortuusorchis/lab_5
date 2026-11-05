@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <cstdlib> 
 #include <ctime> 
+#include <vector>
 using namespace std;
 
 int main() {
@@ -222,7 +223,7 @@ return 0;
 } */
 
 // zadanie 7 -->mnożenie macierzy kwadratowych
-
+/*
 const int rozmiar = 2;
 int macierzA[rozmiar][rozmiar]{};
 int macierzB[rozmiar][rozmiar]{};
@@ -248,7 +249,7 @@ for (int i = 0; i < rozmiar; i++) {
 	for (int j = 0; j < rozmiar; j++) {
 		for (int k = 0; k < rozmiar; k++){
 			iloczyn[i][j] = iloczyn[i][j] + (macierzA[i][k] * macierzB[k][j]); // obliczanie elementów macierzy wynikowej
-		} 
+		}
 	}
 }
 
@@ -262,4 +263,59 @@ for (int i = 0; i < rozmiar; i++) {
 	cout << endl;
 }
 return 0;
-} *
+} */
+
+// zadanie 8 
+/*
+	int rozmiar;
+	cout << "Podaj rozmiar macierzy kwadratowej: " << endl;
+	cin >> rozmiar;
+
+	if (rozmiar <= 0) {
+		cout << "Rozmiar macierzy musi byc wiekszy od 0 !" << endl;
+		return 1;
+	}
+	// utrorzenie macierzy o rozmiarze podanym przez użytkownika
+	vector<vector<int>> macierz(rozmiar,vector<int>(rozmiar)
+	);
+
+	cout << "Podaj elementy macierzy: " << endl;
+	// Wczytytwanie elementów macierzy
+	for (int i = 0; i < rozmiar; i++) {
+		for (int j = 0; j < rozmiar; j++) {
+			cin >> macierz[i][j];
+		}
+	}
+
+	int sumaPrzekatnej = 0;
+	// Sumowanie elemantów głównej przekątnej
+	for (int i = 0; i < rozmiar; i++) {
+		sumaPrzekatnej = sumaPrzekatnej + macierz[i][i];
+	}
+	cout << "Suma elementow glownej przekatnej: " << sumaPrzekatnej << endl;
+
+	return 0;
+} */
+
+// zadanie 9
+
+const int tableSize = 10;
+int tab[tableSize];
+
+
+cout << "Podaj 10 liczb calkowitych: " << endl;
+
+for (int i = 0; i < tableSize; i++) {
+	cout << "Podaj liczbe nr " << i + 1 << ": ";
+	cin >> tab[i];
+}
+
+for (int i = 0; i < tableSize - 1; i++) {
+	for (int j = 0; j < tableSize - 1 - i; i++) {
+
+	}
+	
+}
+cout << "Elementy tablicy posortowane w kolejnosci rosnacej: " << endl;
+return 0;
+}
