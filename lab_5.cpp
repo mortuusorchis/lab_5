@@ -2,6 +2,7 @@
 #include <cstdlib> 
 #include <ctime> 
 #include <vector>
+
 using namespace std;
 
 int main() {
@@ -195,7 +196,7 @@ for (int i = 0; i < rozmiar; i++) {
 		cin >> macierzA[i][j];
 	}
 }
-/// wczytywanie elementów drugiej macierzy
+// wczytywanie elementów drugiej macierzy
 cout << "Wpisz 4 liczb do drugiej macierzy: " << endl;
 
 for (int i = 0; i < rozmiar; i++) {
@@ -248,7 +249,7 @@ for (int i = 0; i < rozmiar; i++) {
 for (int i = 0; i < rozmiar; i++) {
 	for (int j = 0; j < rozmiar; j++) {
 		for (int k = 0; k < rozmiar; k++){
-			iloczyn[i][j] = iloczyn[i][j] + (macierzA[i][k] * macierzB[k][j]); // obliczanie elementów macierzy wynikowej
+			iloczyn[i][j] = iloczyn[i][j] + (macierzA[i][k] * macierzB[j][k]); // obliczanie elementów macierzy wynikowej
 		}
 	}
 }
@@ -298,9 +299,9 @@ return 0;
 } */
 
 // zadanie 9
-
-const int tableSize = 10;
-int tab[tableSize];
+/*
+const int tableSize = 10;// stała przechowująca rozmiar tablicy
+int tab[tableSize]; // utworzenie tablicy 10-elementowej
 
 
 cout << "Podaj 10 liczb calkowitych: " << endl;
@@ -309,13 +310,68 @@ for (int i = 0; i < tableSize; i++) {
 	cout << "Podaj liczbe nr " << i + 1 << ": ";
 	cin >> tab[i];
 }
-
+// sortowanie bąbelkowe
 for (int i = 0; i < tableSize - 1; i++) {
-	for (int j = 0; j < tableSize - 1 - i; i++) {
 
+	// Każda runda przesuwa największy element na koniec
+	for (int j = 0; j < tableSize - 1 - i; j++) { // - i, bo po pierwszej rundzie największy element jest już na końcu
+		if (tab[j] > tab[j + 1]) {
+			swap(tab[j], tab[j + 1]);
+		}
 	}
-	
 }
 cout << "Elementy tablicy posortowane w kolejnosci rosnacej: " << endl;
+
+for (int i = 0; i < tableSize; i++) {
+	cout << tab[i] << " ";
+}
+cout << endl;
 return 0;
+} */
+
+// zadanie 10
+
+	int macierz[8][8]{};
+
+	srand(time(NULL));
+	
+	cout << "Macierz: " << endl;
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			macierz[i][j] = rand() % 100;
+			cout << macierz[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	cout << "\n Suma elementow wierszy: \n";
+
+	for (int i = 0; i < 8; i++) {
+		int sumaWiersza = 0;
+
+		for (int j = 0; j < 8; j++) {
+			sumaWiersza = sumaWiersza + macierz[i][j];
+		}
+        cout << "Wiersz " << i + 1 << ": " << sumaWiersza << endl;
+	}
+	cout << "\n Suma elementow kolumn: \n"; 
+
+	for (int j = 0; j < 8; j++) {
+		int sumaKolumn = 0;
+
+		for (int i = 0; i < 8; i++) {
+			sumaKolumn = sumaKolumn + macierz[i][j];
+		}
+		cout << "Kolumna " << j + 1 << ": " << sumaKolumn << endl;
+	}
+
+	int sumamacierzy = 0;
+
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			sumamacierzy = sumamacierzy + macierz[i][j];	
+		}
+	}
+	cout << "\nSuma wszystkich elementow: " << endl;
+	cout << sumamacierzy << endl;
+    
 }
